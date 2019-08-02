@@ -9,8 +9,8 @@
             {{#each burgers}}
             <li class="list-group-item">ID: {{this.id}}<span class="mx-3">|</span>
                 {{this.burger_name}}<span class="mx-3">|</span>
-                {{#if this.devoured}}Devoured{{else}}Available{{/if}}<span class="mx-3">|</span>
-                <button class="btn btn-default btn-primary rounded-pill" id={{this.id}}>EAT!</button></li>
+                {{#if this.devoured}}Devoured{{else}}Available<span class="mx-3">|</span>
+                <button class="btn btn-default btn-primary rounded-pill" value={{this.id}}>EAT!</button>{{/if}}</li>
             {{/each}}
         </ul>
     </div>
