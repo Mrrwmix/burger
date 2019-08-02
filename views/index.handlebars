@@ -1,24 +1,24 @@
 <div class="row m-0">
     <div class="col-md-12">
-        <h1 class="text-center">Matthew's Burgers</h1>
+        <h1 class="text-center m-0 py-2">Matthew's Burgers</h1>
     </div>
 </div>
-<div class="row m-0">
+<div class="row m-0 mb-5">
     <div class="col-md-12">
         <ul class="list-group text-center">
             {{#each burgers}}
-            <li class="list-group-item">ID: {{this.id}}
-                {{this.burger_name}}
-                {{this.devoured}}
+            <li class="list-group-item">ID: {{this.id}}<span class="mx-3">|</span>
+                {{this.burger_name}}<span class="mx-3">|</span>
+                {{#if this.devoured}}Devoured{{else}}Available{{/if}}<span class="mx-3">|</span>
                 <button class="btn btn-default btn-primary rounded-pill" id={{this.id}}>EAT!</button></li>
             {{/each}}
         </ul>
     </div>
 </div>
 
-<div class="row mt-4 mx-0">
+<div class="row mt-5 mx-0">
     <div class="col-md-12 text-center">
-        <h2>Add a Burger</h2>
+        <h2 class="m-0 py-2">Add a Burger</h2>
         <div class="formo py-3">
             <label for="name">Name</label>
             <input type="text" id="name" name="name">
