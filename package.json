@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/Mrrwmix/burger/issues"
   },
-  "homepage": "https://github.com/Mrrwmix/burger#readme"
+  "homepage": "https://github.com/Mrrwmix/burger#readme",
+  "dependencies": {
+    "mysql": "^2.17.1"
+  }
 }
