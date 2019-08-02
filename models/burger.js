@@ -15,6 +15,11 @@ var burger = {
     orm.updateOne(id, function(res) {
       cb(res);
     });
+  },
+  delete: function(id, cb) {
+    orm.delOne(id, function(res) {
+      cb(res);
+    });
   }
 };
 

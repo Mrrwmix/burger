@@ -26,6 +26,15 @@ var orm = {
         cb(res);
       }
     );
+  },
+  delOne: function(id, cb) {
+    connection.query("DELETE FROM burgers WHERE id=?", [id], function(
+      err,
+      res
+    ) {
+      if (err) throw err;
+      cb(res);
+    });
   }
 };
 

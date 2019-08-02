@@ -18,7 +18,8 @@
         {{#each burgers}}
         <ul class="list-group text-center">
             {{#if this.devoured}}
-            <li class="list-group-item text-muted"><del>{{this.id}}. {{this.burger_name}}</del></li>
+            <li class="list-group-item text-muted"><del>{{this.id}}. {{this.burger_name}}</del><button
+                    class="btn btn-default btn-danger rounded-pill ml-2" value={{this.id}}>CLEAN UP!</button></li>
             {{/if}}
             {{/each}}
         </ul>
@@ -29,8 +30,7 @@
     <div class="col-md-12 text-center p-0">
         <h2 class="m-0 py-2">Add a Burger</h2>
         <div class="formo py-3">
-            <label for="name">Name</label>
-            <input type="text" id="name" name="name">
+            <input type="text" id="name" name="name" placeholder="Enter a Burger Name">
             <button class="btn btn-default btn-secondary rounded" id="submit">Submit</button>
         </div>
     </div>

@@ -8,7 +8,6 @@ const burger = require("../models/burger");
 // Create all our routes and set up logic within those routes where required.
 router.get("/", function(req, res) {
   burger.all(function(data) {
-    console.log(data);
     res.render("index", { burgers: data });
   });
 });
@@ -24,6 +23,12 @@ router.put("/api/burgers", function(req, res) {
     if (result.changedRows === 0) {
       return res.status(404).end();
     }
+    res.status(200).end();
+  });
+});
+
+router.delete("/api/burgers", function(req, res) {
+  burger.delete(req.body.id, function(result) {
     res.status(200).end();
   });
 });

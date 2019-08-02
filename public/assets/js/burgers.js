@@ -1,6 +1,5 @@
 $(document).ready(function() {
   $("body").on("click", "#submit", function() {
-    console.log("Wot");
     $.ajax({
       url: "/api/burgers",
       type: "POST",
@@ -23,6 +22,14 @@ $(document).ready(function() {
       document.location.reload();
     });
   });
-});
 
-console.log("HIHIHI");
+  $("body").on("click", ".btn-danger", function() {
+    $.ajax({
+      url: `/api/burgers`,
+      type: "DELETE",
+      data: { id: parseInt($(this).attr("value")) }
+    }).done(() => {
+      document.location.reload();
+    });
+  });
+});
