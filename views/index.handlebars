@@ -1,23 +1,32 @@
 <div class="row m-0">
-    <div class="col-md-12">
+    <div class="col-md-12 p-0">
         <h1 class="text-center m-0 py-2">Matthew's Burgers</h1>
     </div>
 </div>
 <div class="row m-0 mb-5">
-    <div class="col-md-12">
+    <div class="col-md-6 m-0 p-0">
         <ul class="list-group text-center">
             {{#each burgers}}
-            <li class="list-group-item">ID: {{this.id}}<span class="mx-3">|</span>
-                {{this.burger_name}}<span class="mx-3">|</span>
-                {{#if this.devoured}}Devoured{{else}}Available<span class="mx-3">|</span>
-                <button class="btn btn-default btn-primary rounded-pill" value={{this.id}}>EAT!</button>{{/if}}</li>
+
+            {{#if this.devoured}}{{else}}<li class="list-group-item">{{this.id}}. {{this.burger_name}}
+                <button class="btn btn-default btn-primary rounded-pill ml-2" value={{this.id}}>EAT!</button></li>
+            {{/if}}
+            {{/each}}
+        </ul>
+    </div>
+    <div class="col-md-6 m-0 p-0">
+        {{#each burgers}}
+        <ul class="list-group text-center">
+            {{#if this.devoured}}
+            <li class="list-group-item text-muted"><del>{{this.id}}. {{this.burger_name}}</del></li>
+            {{/if}}
             {{/each}}
         </ul>
     </div>
 </div>
 
 <div class="row mt-5 mx-0">
-    <div class="col-md-12 text-center">
+    <div class="col-md-12 text-center p-0">
         <h2 class="m-0 py-2">Add a Burger</h2>
         <div class="formo py-3">
             <label for="name">Name</label>
